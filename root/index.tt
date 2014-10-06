@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2" style="text-align: center">
+    <h1 id="main-title">Ambiente independente e voluntário de
+      compartilhamento de informações sobre política</h1>
+  </div>
+</div>
+
+[% INCLUDE 'quick_explanation.tt' %]
+
+<hr>
+
+<div style="text-align: center">
+  <h1>Postagens recentes<br><small>todas, em ordem cronológica</small></h1>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <p>
+      <strong style="color:red">Para postar</strong>, acesse o
+      contexto (político ou local) no qual quer fazer a
+      postagem. Para <strong><span style="color:red">ver 
+      postagens de um contexto somente</span></strong>, acesse-o.
+    </p>
+
+    [% IF posts.size > 0 %]
+      [% INCLUDE 'posts_render.tt' posts=posts no_comments=1 %]
+    [% ELSE %]
+      <p><i>Ainda não há postagens nesse contexto.</i></p>
+    [% END %] 
+    <p style="text-align: center; margin-bottom: 25px;"><a href="/h">Mais postagens »</a></p>
+  </div>
+</div>

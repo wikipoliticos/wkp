@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6">
+    <h1 class="no-margin-top">Políticos</h1>
+    [% FOREACH politician IN politicians %]
+    [% most_recent_candidature = politician.candidatures.last %]
+    <div style="margin-bottom: 10px">
+      <a href="[% c.uri_for_action('/p/start', [politician.token]) %]">[% politician.name %]</a>
+      [% politician.party %]<br>CPF: [% politician.cpf_safe %]
+      <br>
+      Candidatura recente:
+      [% most_recent_candidature.year %],
+      [% most_recent_candidature.political_position %],
+      [% IF most_recent_candidature.city %][% most_recent_candidature.first.city %] - [% END %]
+      [% most_recent_candidature.state %]
+    </div>
+    [% END %]
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6">
+    <h1 class="no-margin-top">Financiadores</h1>
+    [% FOREACH financier IN financiers %]
+    <div style="margin-bottom: 10px">
+      <a href="[% c.uri_for_action('/f/start', [financier.token]) %]">[% financier.name %]</a>
+      <br>
+      CPF/CNPJ: [% financier.cnpjf_safe %]
+      <br>
+    </div>
+    [% END %]
+  </div>
+</div>

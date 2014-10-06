@@ -1,0 +1,69 @@
+<form method="post" class="post-form" role="form">
+  <div class="form-group">
+    <label for="post-title">Título</label>
+    <input type="text" name="title" id="post-title" class="form-control" placeholder="Um bom título ajuda os leitores. Tente usar de 6 a 10 palavras, preferencialmente.">
+  </div>
+
+  <div class="form-group">
+    <label for="post-uri">Endereço Web</label>
+    <input type="text" name="uri" id="post-uri" class="form-control" placeholder="Preencha se quiser referenciar a um endereço web">
+  </div>
+
+  <div class="form-group">
+    <label for="post-body">Corpo</label>
+    <textarea name="body" id="post-body" class="form-control" rows="10" placeholder="Você pode fazer uma crítica sobre um assunto, informar sobre uma notícia etc. Caso esteja referenciando uma notícia, apenas explique-a sucintamente. Os leitores que a acharem interessante poderão visitar o endereço web referenciado."></textarea>
+  </div>
+
+  [% UNLESS no_context_input %]
+  <div class="form-group">
+    <label for="post-uri">Contexto</label>
+    <p class="help-block">Você pode vincular sua postagem a um contexto (exemplo: um político), e ela aparecerá em tal contexto. Para escolher, comece a escrever, espere sugestões e clique numa delas.</p>
+    <input type="text" name="contexts" id="post-contexts" class="form-control" autocomplete="off" placeholder="Exemplo: Dilma Rousseff">
+
+    <div id="post-contexts-suggestions" class="help-block list-group"></div>
+  </div>
+  [% END %]
+
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var stopped_typing;
+
+    $('#post-contexts').on('keyup', function() {
+        var text = $('#post-contexts').val();
+
+        $('#post-contexts-suggestions').html('');
+        if (text.length < 3) return false;
+        if (stopped_typing) clearTimeout(stopped_typing);
+
+        stopped_typing = setTimeout(function() {
+
+            $.ajax({ url: '/search-contexts/' + text,
+                     success: function(data) {
+                         $('#post-contexts-suggestions').html('');
+                         $(data).each(function(index, element) {
+                             $('#post-contexts-suggestions').append(policitian_element(element));
+                         });
+
+                         $('.list-group-item').click(function() {
+                             $('input[name="contexts"]').val(this.id);
+                             $('#post-contexts-suggestions').html('');
+                             return false;
+                         });
+                     }
+                   });
+
+        }, 300);
+    });
+
+});
+
+function policitian_element(element) {
+    return '<a href="#" id="' + element.token  + '-p" class="list-group-item">' +
+         '<p class="list-group-item-heading">políticos/' + element.name + '</p>' +
+         '<p class="list-group-item-text">Candidatura recente: ' + element.recent_candidature+'</p>' +
+       '</a>';
+}
+</script>

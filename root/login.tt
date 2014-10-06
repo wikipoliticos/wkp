@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="page-header">
+      <h1>Entrar</h1>
+    </div>
+    <form method="post" role="form">
+      <div class="form-group">
+        <label for="inputEmail1" class="control-label">Nome de usuário</label>
+        <input type="text" name="username" class="form-control" id="inputEmail1" placeholder="Nome de usuário">
+      </div>
+      <div class="form-group">
+        <label for="inputPassword1" class="control-label">Senha</label>
+        <input type="password" name="password" class="form-control" id="inputPassword1" placeholder="Senha">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </div>
+    </form>
+    <p><a href="/recuperar-senha">Esqueceu sua senha?</a></p>
+    <p><a href="/cadastrar-se">Não tem um cadastro? Cadastre-se.</a></p>
+  </div>
+
+  <div class="col-lg-6 col-md-6 col-sm-6">
+    [% INCLUDE 'why_sign_up.tt' %]
+  </div>
+</div>

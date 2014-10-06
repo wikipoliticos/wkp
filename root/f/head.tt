@@ -1,0 +1,10 @@
+<div class="context-header jumbotron">
+  <h1>
+    [% financier.name %]
+    <small class="context-header-subtitle">
+      CPF / CNPJ: [% financier.cnpjf_safe %]
+    </small>
+  </h1>
+
+  <span>Este é um <strong>contexto de financiador</strong>, e não de um recebedor.</span>
+</div>

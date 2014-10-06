@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+  <head>
+    <title>
+      [% IF    page_title_full; page_title_full;
+         ELSIF page_title;      page_title _ ' - WikiPolíticos';
+         ELSE; 'WikiPolíticos';
+         END %]
+    </title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="[% c.uri_for('/static/css/bootstrap.min.css') %]">
+    <link rel="stylesheet" href="[% c.uri_for('/static/css/wkp.css') %]">
+
+    <script src="[% c.uri_for('/static/js/jquery.min.js') %]"></script>
+
+    [% IF og.title %]
+    <meta property="og:title" content="[% og.title %]" />
+    [% END %]
+    [% IF og.description %]
+    <meta property="og:description" content="[% og.description %]" />
+    [% END %]
+    [% IF og.type %]
+    <meta property="og:type" content="[% og.type %]" />
+    [% END %]
+    [% IF og.url %]
+    <meta property="og:url" content="[% og.url %]" />
+    [% END %]
+
+    <meta property="og:site_name" content="WikiPolíticos" />
+    <meta name="description" content="Ambiente de compartilhamento de informações sobre política. Construção colaborativa da história política através da postagem de informações." />
+  </head>
+
+  <body> 
+    <nav class="navbar navbar-default" id="nav-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            <img src="[% c.uri_for('/static/images/wikipoliticos.png') %]">            
+          </a>
+
+          <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div> <!-- /.header -->
+
+        <form class="navbar-form navbar-left" role="search" method="get" action="[% c.uri_for_action('/p/index') %]">
+          <div class="form-group">
+            <input type="text" class="form-control" name="p" placeholder="Buscar político">
+          </div>
+          <button type="submit" class="btn btn-default hidden-sm hidden-xs">Buscar político</button>
+        </form>
+
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+
+            [% IF c.user_exists %]
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <span class="glyphicon glyphicon-user"></span> <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="[% c.uri_for_action('/u/posts', [c.user.token]) %]">Minha conta</a></li>
+                <li class="divider"></li>
+                <li><a href="/sair">Sair</a></li>
+              </ul>
+            </li>
+            [% END %]
+
+            [% UNLESS c.user_exists %]
+            <a href="/cadastrar-se"  style="margin-left: 5px;" class="btn btn-default navbar-btn">Cadastrar-se</a>
+            <a href="/entrar" class="btn btn-default navbar-btn">Entrar</a>
+            [% END %]
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div> <!-- /.container -->
+    </nav>
+
+
+    <nav class="navbar navbar-default hidden-xs" id="nav-body" role="navigation">
+      <div class="container">
+        <div class="collapse navbar-collapse bs-navbar-collapse" style="padding-left: 0">
+          <ul class="nav navbar-nav">
+
+            <li [% IF c.req.action.search('^\/p\/') %]class="active"[% END %]><a href="/p">políticos</a></li>
+            <li [% IF c.req.action.search('^\/l\/') %]class="active"[% END %]><a href="/l">locais</a></li>
+            <li [% IF c.req.action.search('^\/f\/') %]class="active"[% END %]><a href="/f">financiadores eleitorais</a></li>
+            <li [% IF c.req.action.search('^\/posts\/') || c.req.action.search('postar') %]class="active"[% END %]>
+              <a href="/h">postagens</a>
+            </li>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            [% IF c.user_exists %]
+            <li [% IF c.req.action.search('^\/u/contexts') %]class="active"[% END %]>
+              <a href="[% c.uri_for_action('/u/contexts/index', [c.user.token]) %]">
+                meus contextos
+              </a>
+            </li>
+
+            [% END %]
+
+            <li [% IF c.req.action.search('^/u/index$|^/u/edit$|^/u/edit_password|^/u/delete_account$|^/u/posts$') %]
+                class="active"[% END %]>
+              <a href="/u">usuários</a>
+            </li>
+            <li [% IF c.req.action == 'sobre' %]class="active"[% END %]><a href="/sobre">sobre</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-default visible-xs" id="nav-body" role="navigation">
+      <div class="container">
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+          <ul class="nav navbar-nav">
+
+            <li [% IF c.req.action.search('^\/posts\/') || c.req.action.search('postar') %]class="active"[% END %]>
+              <a href="/h">postagens</a>
+            </li>
+            <li [% IF c.req.action.search('^\/p\/') %]class="active"[% END %]><a href="/p">políticos</a></li>
+            <li [% IF c.req.action.search('^\/l\/') %]class="active"[% END %]><a href="/l">locais</a></li>
+            <li [% IF c.req.action.search('^\/f\/') %]class="active"[% END %]><a href="/f">financiadores eleitorais</a></li>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            [% IF c.user_exists %]
+            <li [% IF c.req.action.search('^\/u/contexts') %]class="active"[% END %]>
+              <a href="[% c.uri_for_action('/u/contexts/index', [c.user.token]) %]">
+                meus contextos
+              </a>
+            </li>
+
+            [% END %]
+
+            <li [% IF c.req.action.search('^/u/index$|^/u/edit$|^/u/edit_password|^/u/delete_account$|^/u/posts$') %]
+                class="active"[% END %]>
+              <a href="/u">usuários</a>
+            </li>
+            <li [% IF c.req.action == 'sobre' %]class="active"[% END %]><a href="/sobre">sobre</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      [% IF alert_success || c.flash.alert_success %]
+      <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        [% alert_success || c.flash.alert_success %]
+      </div>
+      [% ELSIF alert_info || c.flash.alert_info %]
+      <div class="alert alert-info alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        [% alert_info || c.flash.alert_info %]
+      </div>
+      [% ELSIF alert_error || c.flash.alert_error %]
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        [% alert_error || c.flash.alert_error %]
+      </div>
+      [% END %]
+
+      [% content %]
+    </div>
+
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted">
+          <a href="/">WikiPolíticos</a>
+      </div>
+    </div>
+
+    <script src="[% c.uri_for('/static/js/bootstrap.min.js') %]"></script>
+  </body>
+</html>

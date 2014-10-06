@@ -1,0 +1,120 @@
+[% INCLUDE 'p/head.tt' %]
+
+[% INCLUDE 'p/tabs.tt' %]
+
+<h2>Financiamento Eleitoral [% year %]
+  <small>
+    <a href="http://www.tse.jus.br/eleicoes/repositorio-de-dados-eleitorais">
+      Fonte: Tribunal Superior Eleitoral</a></small></h2>
+
+<p>
+  Estas doações foram feitas diretamente <i style="color: red">para</i> este
+  candidato. No entanto, seu comitê eleitoral e seu partido político
+  podem ter recebido outras doações.
+</p>
+
+<ul>
+  <li>Cargo pleiteado em [% year %]:
+      [% this_year_candidature.political_position %] em
+      [% IF this_year_candidature.city %]
+      [% this_year_candidature.city %]-[% END %][% this_year_candidature.state %].</li>
+  <li><strong>Total de doações recebido:
+      <i style="color: red">R$ [% number_formater(donations_total) %]</i> (R$ de [% year %]).</strong></li>
+</ul>
+
+</p>
+
+<h3 id="indice">Índice</h3>
+
+<a href="#agrupadas-tipo-de-receita">Doações, agrupadas por tipo de receita</a><br>
+<a href="#agrupadas-doadores">Doações, agrupadas por doadores</a><br>
+<a href="#nao-agrupadas">Doações, não-agrupadas</a>
+
+<h3 id="agrupadas-tipo-de-receita">Doações agrupadas por tipo de receita</h3>
+
+<table class="table table-striped table-hover table-condensed">
+  <thead>
+  <tr>
+    <td>Tipo</td>
+    <td style="text-align:right">Valor (R$ de [% year %])</td>
+  </tr>
+  </thead>
+  <tbody>
+    [% FOREACH donation IN donations_type %]
+    <tr>
+      <td>[% donation.get_column('tipo') %]</td>
+      <td style="text-align:right">
+        R$ [% number_formater(donation.get_column('valor')) %]
+      </td>
+    </tr>
+    [% END %]
+  </tbody>
+</table>
+
+<h3 id="agrupadas-doadores">Doações agrupadas por doadores</h3>
+
+<table class="table table-striped table-hover table-condensed">
+  <thead>
+  <tr>
+    <td>Doador</td>
+    <td>Tipo</td>
+    <td style="text-align:right">Valor (R$ de [% year %])</td>
+  </tr>
+  </thead>
+  <tbody>
+    [% FOREACH donation IN donations_financier %]
+    <tr>
+      <td>
+        <a href="[% c.uri_for_action(
+                      '/f/financing' _ year, [donation.get_column('token')]) %]">
+          [% donation.get_column('name') %]
+        </a>
+      </td>
+      <td>[% donation.get_column('tipo') %]</td>
+      <td style="text-align:right">
+        R$ [% number_formater(donation.get_column('valor')) %]
+      </td>
+    </tr>
+    [% END %]
+  </tbody>
+</table>
+
+<h3 id="nao-agrupadas" style="font-variant: smal-caps">Todas as doações, sem agrupamento</h3>
+
+<table class="table table-striped table-hover table-condensed">
+  <thead>
+  <tr>
+    <td>Doador</td>
+    <td>Tipo de Receita</td>
+    <td>CPF/CNPJ</td>
+    <td style="text-align:right">Valor (R$ de [% year %])</td>
+    <td style="text-align:right">Fonte</td>
+  </tr>
+  </thead>
+  <tbody>
+    [% FOREACH donation IN donations_all %]
+    <tr>
+      <td>
+        <a href="[% c.uri_for_action('/f/financing' _ year, [donation.financier.token]) %]">
+          [% donation.financier.name %]
+        </a>
+      </td>
+      <td>[% donation.receita_tipo %]</td>
+      <td>[% donation.financier.cnpjf_safe %]</td>
+      <td style="text-align:right">R$ [% number_formater(donation.receita_valor) %]</td>
+      <td style="text-align:right">
+        <a data-title='Este é o formato dos dados publicados pelo TSE.'
+           data-content='[% donation.dados_originais.replace(';', '; ') %]'
+           class="popover-button">Fonte</a>
+      </td>
+    </tr>
+    [% END %]
+  </tbody>
+</table>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.popover-button').popover({ placement: 'left',
+                                   trigger: 'hover' });
+  });
+</script>

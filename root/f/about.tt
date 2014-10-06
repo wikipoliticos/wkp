@@ -1,0 +1,11 @@
+[% INCLUDE 'f/head.tt' %]
+
+[% INCLUDE 'f/tabs.tt' %]
+<h2>Sobre</h2>
+
+<dl class="dl-horizontal">
+  <dt>Nome completo</dt>
+  <dd>[% financier.name %]</dd>
+  <dt>CPF / CNPJ</dt>
+  <dd>[% financier.cnpjf_safe %]</dd>
+</dl>

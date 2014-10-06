@@ -1,0 +1,65 @@
+<div class="page-header">
+  <h1>Financiadores Eleitorais</h1>
+</div>
+
+<p>Lista de todos as pessoas físicas e jurídicas que fizeram doações nas eleições 2010 e 2012. Em cada contexto de financiador você encontrará:</p>
+
+<ul>
+  <li>dados sobre seu financiamento eleitoral, mostrando os candidatos para quem doaram</li>
+</ul>
+
+<p><strong style="color:red">Para buscar um financiador específico, use o campo de busca abaixo.</strong></p>
+
+<form method="get">
+  <div style="text-align:center; width: 50%; margin: 70px auto 50px">
+    <div class="input-group">
+      <input type="text" name="p" class="form-control" placeholder="Buscar financiador por nome"
+             value="[% p %]">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-default" type="button">
+          <span class="glyphicon glyphicon-search"></span></button>
+      </span>
+    </div><!-- /input-group -->
+  </div>
+</form>
+
+<div class="search-result-infos">
+  [% IF p %]
+  <p class="pull-left"><i>[% pager.total_entries %] resultado(s) para a procura por "[% p %]"</i></p>
+[% END %]
+  <p class="pull-right badge">doações diretas para candidatos em 2012</p>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="list-group">
+  [% FOREACH financier IN financiers %]
+
+  <a href="[% c.uri_for_action('/f/start', [financier.token]) %]" class="list-group-item">
+
+    <span class="badge">
+     [% IF financier.donations_2012_candidates_sum;
+         'R$ ' _ number_formater(financier.donations_2012_candidates_sum);
+         ELSE; 'Zero ou não há'; END %]
+    </span>
+
+    <p class="list-group-item-heading">
+      [% financier.name %]
+      <span class="">[% label_cpf_or_cnpj(financier.cnpjf_safe) %]</span>
+    </p>
+
+    <p class="list-group-item-text">
+      CPF / CNPJ: [% financier.cnpjf_safe %]
+    </p>
+
+  </a>
+  [% END %]
+</div>
+
+[% INCLUDE 'paging.tt' %]
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  $('input[name="p"]').focus();
+  });
+</script>

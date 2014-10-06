@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6">
+
+    <div class="page-header">
+    <h1>Cadastro de usuário</h1>
+    </div>
+    <form method="post" role="form">
+      <div class="form-group">
+        <label class="control-label">Nome (opcional)</label>
+        <input type="text" name="name" value="[% c.req.params.name %]" autocomplete="off" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Login</label>
+        <input type="text" name="username" value="[% c.req.params.username %]" autocomplete="off" class="form-control">
+        <span class="help-block">Use apenas minúsculas, números e/ou _ (sublinhado).</span>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Senha</label>
+        <input type="password" name="password" value="[% c.req.params.password %]" autocomplete="off" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Senha, novamente</label>
+        <input type="password" name="password_confirmation"
+               value="[% c.req.params.password_confirmation %]" autocomplete="off" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">
+          Email (opcional)
+        </label>
+        <input type="text" name="email" value="[% c.req.params.email %]" autocomplete="off" class="form-control">
+        <span class="help-block">Opcional, mas única forma de recuperar senha.</span>
+      </div>
+
+      <img src="/captcha"></img>
+
+      <div class="form-group">
+        <label class="control-label">
+          Validação: digite os números acima
+        </label>
+        <input type="text" name="captcha" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Enviar" class="btn btn-primary">
+      </div>
+    </form>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6">
+    [% INCLUDE 'why_sign_up.tt' %]
+  </div>
+</div>

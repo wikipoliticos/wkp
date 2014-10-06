@@ -1,0 +1,18 @@
+<ul class="nav nav-tabs nav-justified">
+  <li class="[% IF c.req.action == '/f/about' || c.req.action == '/f/start'
+             || c.req.action == '/f/about_retrocompatibility'
+             || c.req.action == '/f/financing_retrocompatibility'; 'active'; END %]">
+    <a href="[% c.uri_for_action('/f/about', [financier.token]) %]">Sobre</a></li>
+
+  [% IF financier.donations_2010_candidates %]
+  <li class="[% IF c.req.action == '/f/financing2010'; 'active'; END %]">
+    <a href="[% c.uri_for_action('/f/financing2010', [financier.token]) %]">
+      Financiamento Eleitoral 2010</a></li>
+  [% END %]
+
+  [% IF financier.donations_2012s %]
+  <li class="[% IF c.req.action == '/f/financing2012'; 'active'; END %]">
+    <a href="[% c.uri_for_action('/f/financing2012', [financier.token]) %]">
+      Financiamento Eleitoral 2012</a></li>
+  [% END %]
+</ul>

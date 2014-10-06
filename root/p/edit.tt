@@ -1,0 +1,13 @@
+[% INCLUDE 'p/head.tt' %]
+
+[% INCLUDE 'p/tabs.tt' %]
+
+<form method="post">
+
+<input type="text" name="name" value="[% politician.name %]">
+<input type="text" name="political_nickname" value="[% politician.political_nickname %]">
+<input type="text" name="token" value="[% politician.token %]">
+
+<input type="submit" value="Enviar">
+
+</form>

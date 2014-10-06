@@ -1,0 +1,21 @@
+[% INCLUDE 'l/head.tt' %]
+
+[% INCLUDE 'l/tabs.tt' %]
+
+<h2>Postagens</h2>
+
+<div class="row">
+  <div class="col-lg-12">
+    [% IF posts.size > 0 %]
+    [% INCLUDE 'posts_render.tt' posts=posts no_comments=1 %]
+    [% ELSE %]
+    <p><i>Ainda não há postagens nesse contexto.</i></p>
+    [% END %]
+  </div>
+</div>
+
+[% INCLUDE 'paging.tt' %]
+
+<script type="text/javascript">
+[% INCLUDE 'post_show_hide.js' %]
+</script>

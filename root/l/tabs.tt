@@ -1,0 +1,12 @@
+<ul class="nav nav-tabs nav-justified">
+  <li class="[% IF c.req.action == '/l/start'; 'active'; END %]">
+    <a href="[% c.uri_for_action('/l/start', [location.id]) %]">Sobre</a></li>
+
+
+  <li class="[% IF c.req.action == '/l/posts' || c.req.action == '/l/post_add'; 'active'; END %]">
+    <a href="[% c.uri_for_action('/l/posts', [location.id]) %]">Postagens</a></li>
+
+  <li class="[% IF c.req.action == '/l/politicians'; 'active'; END %]">
+    <a href="[% c.uri_for_action('/l/politicians', [location.id]) %]">Políticos</a></li>
+
+</ul>

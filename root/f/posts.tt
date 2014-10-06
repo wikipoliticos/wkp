@@ -1,0 +1,110 @@
+[% INCLUDE 'p/head.tt' %]
+
+[% INCLUDE 'p/tabs.tt' %]
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-6">
+
+    <h3>Mais relevantes</h3>
+
+    <div class="media">
+      <a class="pull-left" href="#">
+        ...
+      </a>
+      <div class="media-body" style="text-align:justify">
+        <h4 class="media-heading">Media heading</h4>
+        <p>Texto de uma postagem sobre alguma coisa muito interessante.
+          Texto de uma postagem sobre alguma coisa muito interessante.
+          Texto de uma postagem sobre alguma coisa muito interessante.</p>
+        <p>Texto de uma postagem sobre alguma coisa muito interessante.
+          Texto de uma postagem sobre alguma coisa muito interessante.
+          Texto de uma postagem sobre alguma coisa muito interessante.
+          Texto de uma postagem sobre alguma coisa muito interessante.</p>
+
+        <div class="media">
+          <a class="pull-left" href="#">
+            ...
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">Media heading</h4>
+            <p>Texto de uma postagem sobre alguma coisa muito interessante.
+              Texto de uma postagem sobre alguma coisa muito interessante.
+              Texto de uma postagem sobre alguma coisa muito interessante.
+              Texto de uma postagem sobre alguma coisa muito interessante.</p>
+
+            <div class="media">
+              <a class="pull-left" href="#">
+                ...
+              </a>
+              <div class="media-body">
+                <h4 class="media-heading">Media heading</h4>
+                <p>Texto de uma postagem sobre alguma coisa muito interessante.
+                  Texto de uma postagem sobre alguma coisa muito interessante.
+                  Texto de uma postagem sobre alguma coisa muito interessante.
+                  Texto de uma postagem sobre alguma coisa muito interessante.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <div class="col-6">
+
+    <h3>Mais recentes</h3>
+
+    <div class="media">
+      <a class="pull-left" href="#">
+        ...
+      </a>
+      <div class="media-body" style="text-align:justify">
+        <h4 class="media-heading">Media heading</h4>
+        <p>Texto de uma postagem sobre alguma coisa muito interessante.
+          Texto de uma postagem sobre alguma coisa muito interessante.
+          Texto de uma postagem sobre alguma coisa muito interessante.</p>
+        <p>Texto de uma postagem sobre alguma coisa muito interessante.
+          Texto de uma postagem sobre alguma coisa muito interessante.
+          Texto de uma postagem sobre alguma coisa muito interessante.
+          Texto de uma postagem sobre alguma coisa muito interessante.</p>
+
+        <div class="media">
+          <a class="pull-left" href="#">
+            ...
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">Media heading</h4>
+            <p>Texto de uma postagem sobre alguma coisa muito interessante.
+              Texto de uma postagem sobre alguma coisa muito interessante.
+              Texto de uma postagem sobre alguma coisa muito interessante.
+              Texto de uma postagem sobre alguma coisa muito interessante.</p>
+
+            <div class="media">
+              <a class="pull-left" href="#">
+                ...
+              </a>
+              <div class="media-body">
+                <h4 class="media-heading">Media heading</h4>
+                <p>Texto de uma postagem sobre alguma coisa muito interessante.
+                  Texto de uma postagem sobre alguma coisa muito interessante.
+                  Texto de uma postagem sobre alguma coisa muito interessante.
+                  Texto de uma postagem sobre alguma coisa muito interessante.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

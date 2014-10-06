@@ -1,0 +1,127 @@
+[% FOREACH post IN posts %]
+
+<div class="media [% IF post.parent_id && !disable_comment_indenting %]media-indent media-indent[% color || 1 %][% END %]">
+
+  <div class="media-body">
+
+    <div class="post" id="post-[% post.id %]">
+      <div class="post-head">
+        <a name="[% post.id %]"></a>
+
+        <h2 class="post-title media-heading">
+          [% IF post.uri %]
+          <a href="[% post.uri %]">[% post.title %]</a>
+          [% ELSE %]
+          <a href="[% c.uri_for_action('/posts/details', [post.id]) %]">[% post.title %]</a>
+          [% END %]
+
+          <small>
+            <br>
+            [% UNLESS post.parent_id %]
+            [% FOREACH post_politician IN post.posts_politicians %]
+            <a href="[% c.uri_for_action('/p/posts', [post_politician.politician.token]) %]">
+              <span class="label label-default">[% post_politician.politician.name %]</span></a>[% END %]
+
+            [% FOREACH post_location IN post.posts_locations %]
+
+            <a href="[% c.uri_for_action('/l/posts', [post_location.location.id]) %]">
+              <span class="label label-primary">[% post_location.location.name %]</span></a>[% END %]
+            [% END %]
+          </small>
+        </h2>
+
+        <div class="post-info">
+          [% IF post.uri %]
+          <a href="[% post.uri %]" class="post-uri">fonte: [% post.uri %]</a>
+          [% END %]
+
+          postado por
+          [% IF post.user_id %]<a href="[% c.uri_for_action('/u/posts', [post.user.token]) %]">[% post.user.token %]</a>
+          [% ELSE %]anônimo[% END %] em
+          [% post.created.strftime('%d/%m/%y') %]
+        </div>
+      </div><!-- post-head -->
+
+      <div class="post-body">
+        <p class="">[% post.body.replace('\n\r', '</p><p>') %]</p>
+      </div>
+
+      <div class="post-footer">
+
+        [% IF no_comments %]
+        <a href="[% c.uri_for_action('/posts/details', [post.id]) %]" class="post-footer-item">
+          <span>Comentários</span></a>[% ELSE %]
+
+          [% UNLESS no_comments %]
+          <a class="show-hide-new-comment-form" id="comment-new-[% post.id %]" href="">Comentar esta postagem</a>
+          [% END %]
+
+          <a href="#" class="comments-show-hide">
+            [% IF post.posts.size AND post.posts.size > 0 %]
+            <span class="comments-show-hide-action">Esconder</span> comentários[% END %]</a>
+
+        [% END %]
+
+        [% IF post.parent %]
+          <a href="#[% post.parent.id %]" class="post-footer-item">
+            Ir à postagem um nível acima</a>&nbsp;&nbsp;
+        [% END %]
+
+        [% IF (c.user_exists && post.user_id && post.user_id == c.user.id) || c.user.role == 'admin' %]
+        <a href="[% c.uri_for_action('/posts/delete' [post.id]) %]">Deletar</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        [% END %]
+
+      </div> <!-- post-footer -->
+
+      [% UNLESS no_comments %]
+      <!-- Comment insertion form -->
+      <form method="post" role="form" class="hide" id="comment-form-[% post.id %]">
+        [% alert_error = "alert_error_${post.id}" %]
+        [% IF c.flash.$alert_error %]
+        <div class="alert alert-danger alert-dismissable alert-new-comment" id="alert-[% post.id %]">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          [% c.flash.$alert_error %]
+        </div>
+        [% END %]
+
+        [% form_params = "form_params_${post.id}" %]
+
+        <input type="hidden" class="hide" name="parent_id" value="[% post.id %]">
+
+        <div class="form-group">
+          <label class="">Título</label>
+          <input name="title" class="form-control"
+                 value="[% IF $form_params.title; $form_params.title;
+                           ELSIF post.title.match('(?i)^re:\s'); post.title;
+                           ELSE; 'Re: ' _ post.title; END %]">
+          <span class="help-block">Um bom título ajuda muito os leitores. Tente usar de 6 até 10 palavras, preferencialmente.</span>
+        </div>
+        <div class="form-group">
+          <label class="">Corpo</label>
+          <textarea name="body" rows="5" class="form-control" placeholder="Você pode fazer uma crítica sobre um assunto, informar sobre uma notícia etc. Caso esteja referenciando uma notícia, apenas explique-a sucintamente. Os leitores que a acharem interessante poderão visitar o endereço web referenciado.">[% IF $form_params.body; $form_params.body; END %]</textarea>
+        </div>
+        <img src="/captcha"></img>
+
+        <div class="form-group">
+          <label class="control-label">
+            Validação. Digite os caracteres acima
+          </label>
+          <input type="text" name="captcha" class="form-control">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Comentar</button>
+        </div>
+      </form>
+      [% END %]
+
+    </div><!-- post -->
+
+    [% UNLESS no_comments %]
+      [% INCLUDE 'posts_render.tt' posts=post.posts original_post=post %]
+    [% END %]
+
+  </div><!-- media-body -->
+
+</div><!-- media -->
+
+[% END %]<!-- foreach -->

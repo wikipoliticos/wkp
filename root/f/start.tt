@@ -1,0 +1,9 @@
+[% INCLUDE 'f/head.tt' %]
+
+[% INCLUDE 'f/tabs.tt' %]
+
+<div class="row">
+  <div class="col-4">
+
+  </div>
+</div>

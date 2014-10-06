@@ -1,0 +1,17 @@
+<div class="context-header jumbotron">
+  <h1>[% user.token %]</h1>
+
+  [% IF c.user.token == user.token %]
+  <div class="context-header-buttons">
+    <a href="[% c.uri_for_action('/u/edit', [c.user.token]) %]" class="btn btn-default btn-sm">
+      Editar detalhes
+    </a>
+    <a href="[% c.uri_for_action('/u/edit_password', [c.user.token]) %]" class="btn btn-default btn-sm">
+      Alterar senha
+    </a>
+    <a href="[% c.uri_for_action('/u/delete_account', [c.user.token]) %]" class="btn btn-default btn-sm">
+      Deletar conta
+    </a>
+  </div>
+  [% END %]
+</div>

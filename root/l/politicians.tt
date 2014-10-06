@@ -1,0 +1,39 @@
+[% INCLUDE 'l/head.tt' %]
+
+[% INCLUDE 'l/tabs.tt' %]
+
+<h2>
+  Políticos
+  <small>apenas políticos ligados a este local</small>
+  <a href="[% c.req.uri_with({ordenacao => undef}) %]" class="btn btn-default">Ordenar por nome</a>
+  <a href="[% c.req.uri_with({ordenacao => 'doacoes2012'}) %]" class="btn btn-default">Ordenar pelas doações em 2012</a>
+</h2>
+
+<div class="search-result-infos">
+  <p class="pull-right badge">doações diretas para candidatos em 2012</p>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="list-group">
+  [% FOREACH politician IN politicians %]
+  <a href="[% c.uri_for_action('/p/start', [politician.token]) %]" class="list-group-item">
+
+    <span class="badge">
+      [% IF politician.donations_2012_candidates_sum;
+         'R$ ' _ number_formater(politician.donations_2012_candidates_sum);
+         ELSE; 'Zero ou não há'; END %]
+    </span>
+
+    <p class="list-group-item-heading">
+      [% politician.name %] [% politician.party %]
+    </p>
+
+    <p class="list-group-item-text">
+       Candidatura recente: [% politician.most_recent_candidature %]
+    </p>
+  </a>
+  [% END %]
+</div>
+
+[% INCLUDE 'paging.tt' %]

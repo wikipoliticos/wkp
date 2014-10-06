@@ -1,0 +1,13 @@
+[% INCLUDE 'u/head.tt' %]
+
+<h2>Postagens deste usuário</h2>
+
+<div class="row">
+  <div class="col-lg-12">
+    [% IF posts.size > 0 %]
+    [% INCLUDE 'posts_render.tt' posts=posts disable_comment_indenting=1 %]
+    [% ELSE %]
+    <p><i>Ainda não há postagens nesse contexto.</i></p>
+    [% END %]
+  </div>
+</div>

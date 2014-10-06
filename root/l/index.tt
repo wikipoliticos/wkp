@@ -1,0 +1,41 @@
+<div class="page-header">
+  <h1 class="no-margin-top">Locais</h1>
+</div>
+
+<p>Lista de todos os Estados e Municípios do Brasil. Em cada contexto de local você encontrará:</p>
+<ul>
+  <li>lista de políticos ligados ao local, que pode ser ordenada pela soma das doações recebidas pelos políticos</li>
+  <li>postagens de informações sobre o local, feitas por usuários.</li>
+</ul>
+
+<p><strong style="color:red">Para buscar um local específico, use o campo de busca abaixo.</strong></p>
+
+<form method="get">
+  <div style="text-align:center; width: 50%; margin: 70px auto 50px">
+    <div class="input-group">
+      <input type="text" name="p" class="form-control" placeholder="Buscar local por nome" value="[% p %]">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+      </span>
+    </div>
+  </div>
+</form>
+
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="list-group">
+        [% FOREACH location IN locations %]
+        <a href="[% c.uri_for_action('/l/posts', [location.id]) %]" class="list-group-item">
+          <p class="list-group-item-heading">[% location.name %]</p>
+        </a>
+        [% END %]
+    </div>
+    [% INCLUDE 'paging.tt' %]
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  $('input[name="p"]').focus();
+  });
+</script>

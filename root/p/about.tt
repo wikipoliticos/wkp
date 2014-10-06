@@ -1,0 +1,34 @@
+[% INCLUDE 'p/head.tt' %]
+
+[% INCLUDE 'p/tabs.tt' %]
+
+<h2>Sobre</h2>
+
+
+<dl class="dl-horizontal">
+  <dt>Nome completo</dt>
+  <dd>[% politician.name %]</dd>
+  [% IF politician.party %]
+  <dt>Partido</dt>
+  <dd>[% politician.party %]</dd>
+  [% END %]
+</dl>
+
+<h3>Candidaturas</h3>
+<p><i>Atenção: a listagem provavelmente está incompleta. Estamos preenchendo-a paulatinamente.</i></p>
+<ul>
+  [% FOREACH candidature IN politician.candidatures %]
+  <li>[% candidature.print_ok %]</li>
+  [% END %]
+</ul>
+
+<h3>Locais</h3>
+<p>Locais a que este político está ligado.</p>
+<ul>
+  [% FOREACH location IN politician.locations %]
+  <li>[% location.name %]</li>
+  [% END %]
+</ul>
+
+
+

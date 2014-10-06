@@ -1,0 +1,23 @@
+    <form method="post" class="post-form" role="form">
+      <div class="form-group">
+        <label for="post-title">Título</label>
+        <input type="text" name="title" id="post-title" class="form-control" value="[% form_params.title %]"
+               placeholder="Um bom título ajuda os leitores. Tente usar de 6 a 10 palavras, preferencialmente.">
+      </div>
+
+      <div class="form-group">
+        <label for="post-uri">Endereço Web</label>
+        <input type="text" name="uri" id="post-uri" class="form-control" value="[% form_params.uri %]"
+               placeholder="Preencha se quiser referenciar a um endereço web">
+      </div>
+
+      <div class="form-group">
+        <label for="post-body">Corpo</label>
+        <textarea name="body" id="post-body" class="form-control" rows="10" placeholder="Você pode postar uma notícia, fazer uma crítica sobre um assunto etc. Caso poste uma notícia, explique-a aqui apenas sucintamente. Os leitores que quiserem visitarão o endereço web referenciado.">[% form_params.body %]</textarea>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Enviar" class="btn btn-primary">
+      </div>
+
+    </form>

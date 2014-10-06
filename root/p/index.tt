@@ -1,0 +1,64 @@
+<div class="page-header">
+  <h1 class="no-margin-top">Políticos</h1>
+</div>
+
+<p>Lista de todos os políticos que participaram das eleições 2010 e 2012.
+  Em cada contexto de político você encontrará:</p>
+
+<ul>
+  <li>dados sobre seu financiamento eleitoral, mostrando que pessoas físicas ou jurídicas fizeram-lhe doações</li>
+  <li>postagens de informações sobre o político, feitas por usuários</li>
+</ul>
+
+<p><strong style="color:red">Para buscar um político por nome, use o campo de busca abaixo.</strong></p>
+
+<form method="get">
+  <div style="text-align:center; width: 50%; margin: 50px auto 60px">
+    <div class="input-group">
+      <input type="text" name="p" class="form-control" placeholder="Buscar político por nome"
+             value="[% p %]">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-default" type="button">
+          <span class="glyphicon glyphicon-search"></span></button>
+      </span>
+    </div><!-- /input-group -->
+  </div>
+</form>
+
+<div class="search-result-infos">
+  [% IF p %]
+  <p class="pull-left"><i>[% pager.total_entries %] resultado(s) para a procura por "[% p %]"</i></p>
+[% END %]
+  <p class="pull-right badge">doações diretas para candidatos em 2012</p>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="list-group">
+  [% FOREACH politician IN politicians %]
+  <a href="[% c.uri_for_action('/p/start', [politician.token]) %]" class="list-group-item">
+
+    <span class="badge">
+      [% IF politician.donations_2012_candidates_sum;
+         'R$ ' _ number_formater(politician.donations_2012_candidates_sum);
+         ELSE; 'Zero ou não há'; END %]
+    </span>
+
+    <p class="list-group-item-heading">
+      [% politician.name %] [% politician.party %]
+    </p>
+
+    <p class="list-group-item-text">
+       Candidatura recente: [% politician.most_recent_candidature %]
+    </p>
+  </a>
+  [% END %]
+</div>
+
+[% INCLUDE 'paging.tt' %]
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  $('input[name="p"]').focus();
+  });
+</script>

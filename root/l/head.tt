@@ -1,0 +1,8 @@
+<div class="context-header jumbotron">
+  <h1>[% location.name %]</h1>
+
+  <div class="context-header-buttons">
+    <a href="[% c.uri_for_action('/l/post_add', [location.id]) %]"
+       class="btn btn-warning btn-sm">Postar neste contexto</a>
+  </div>
+</div>

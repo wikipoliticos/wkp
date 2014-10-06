@@ -1,0 +1,26 @@
+[% INCLUDE 'u/head.tt' %]
+
+<h2>Meus Contextos</h2>
+
+
+<h3>Políticos Acompanhados</h3>
+
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="list-group">
+      [% politicians = c.user.politicians({}, { order_by => 'name' }) %]
+
+      [% IF politicians %]
+      [% FOREACH politician IN politicians %]
+      <a href="[% c.uri_for_action('/p/start', [politician.token]) %]" class="list-group-item">
+        <p class="list-group-item-heading">[% politician.name %]</p>
+        <p class="list-group-item-text">[% politician.party %]. Candidatura recente: [% politician.candidatures.first.print_ok %]</p>
+      </a>
+      [% END %]
+      [% ELSE %]
+      <i>Nenhum político está sendo acompanhado</i>
+      [% END %]
+    </div>
+
+  </div>
+</div>

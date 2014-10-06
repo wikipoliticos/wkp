@@ -1,0 +1,5 @@
+[% INCLUDE 'l/head.tt' %]
+
+[% INCLUDE 'l/tabs.tt' %]
+
+[% INCLUDE 'post_add.tt' %]

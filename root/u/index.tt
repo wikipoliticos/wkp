@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1 class="no-margin-top">Usuários</h1>
+</div>
+
+<form method="get">
+  <div style="text-align:center; width: 50%; margin: 20px auto 30px">
+    <div class="input-group">
+      <input type="text" name="p" class="form-control" placeholder="Buscar usuário por nome" value="[% c.req.param('p') %]">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+      </span>
+    </div><!-- /input-group -->
+  </div>
+</form>
+
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="list-group">
+        [% FOREACH user IN users %]
+        <a href="[% c.uri_for_action('/u/posts', [user.token]) %]" class="list-group-item">
+          <p class="list-group-item-heading">[% user.token %] [% IF user.name %]([% user.name %])[% END %]</p>
+        </a>
+        [% END %]
+    </div>
+    [% INCLUDE 'paging.tt' %]
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  $('input[name="p"]').focus();
+  });
+</script>
