@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-md-3 col-lg-3">
+    <h2>Atenção ao postar</h2>
+
+    <div class="panel panel-default">
+      <div class="panel-body post-instructions">
+        <p>Ao postar, você aceita
+          os <a href="/sobre#termos-de-uso">termos de uso</a>.</p>
+        <p>Conteúdo sem fonte poderá ser removido.</p>
+        <p>Uma fonte será preferencialmente o endereço web de uma
+          notícia de jornal.</p>
+        <p>Um título bom e conciso ajuda os leitores.</p>
+        <p>O corpo da postagem preferencialmente receberá uma
+          descrição ou trechos do conteúdo do endereço web.</p>
+        <p>No entanto, pode-se também postar o conteúdo completo, se
+          não muito grande.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-6">
+    <h2>Nova postagem neste contexto</h2>
+
+    <form method="post" class="post-form" role="form">
+      <div class="form-group">
+        <label for="post-title">Título</label>
+        <input type="text" name="title" id="post-title" class="form-control"
+               value="[% form_params.title %]"
+               placeholder="Um título bom e conciso ajuda os leitores">
+      </div>
+
+      <div class="form-group">
+        <label for="post-uri">Endereço web, fonte da informação</label>
+        <input type="text" name="uri" id="post-uri" class="form-control"
+               value="[% form_params.uri %]">
+      </div>
+
+      <div class="form-group">
+        <label for="post-body">Corpo</label>
+        <textarea name="body" id="post-body" class="form-control" rows="10"
+                  placeholder="O corpo da postagem preferencialmente receberá
+ uma descrição ou trechos do conteúdo do endereço web. No entanto, pode-se
+ também postar o conteúdo completo, se não muito grande."
+                  >[% form_params.body %]</textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="post-date">Data de referência</label>
+        <input type="text" name="date" id="post-date" class="form-control"
+               style="width: 200px"
+               value="[% form_params.title %]">
+        <p class="help-block">Só preencha se a postagem referenciar
+          acontecimento não-recente. Ex: 01/04/1980</ap>
+      </div>
+
+      <img src="/captcha"></img>
+      <div class="form-group">
+        <label class="control-label">
+          Validação. Digite os caracteres acima
+        </label>
+        <input type="text" name="captcha" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Enviar" class="btn btn-primary">
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+[% INCLUDE 'post_new_validations.js' %]
+</script>
