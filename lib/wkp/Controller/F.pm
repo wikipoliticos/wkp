@@ -25,7 +25,7 @@ sub object :Chained('base') PathPart('') CaptureArgs(1) {
 sub index :Chained('base') PathPart('') Args(0) {
     my ( $self, $c ) = @_;
 
-    my $p = $c->req->param('p');
+    my $p = $c->req->param('p') || '';
     $p =~ s/<|>|%3C//g;
 
     my $page = $c->req->param('pagina') || 1;
