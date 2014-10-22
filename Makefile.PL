@@ -42,6 +42,8 @@ requires 'MooseX::NonMoose';
 requires 'DBD::Pg';
 requires 'DateTime::Format::Pg';
 requires 'DBIx::Class::Schema::Loader';
+requires 'Catalyst::Plugin::Cache';
+requires 'Cache::FastMmap';
 
 test_requires 'Test::More' => '0.88';
 catalyst;

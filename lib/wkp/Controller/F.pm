@@ -79,34 +79,54 @@ sub financing_retrocompatibility :Chained('object') PathPart('financiamento') Ar
 sub financing2012 :Chained('object') PathPart('financiamento2012') Args(0) {
     my ( $self, $c ) = @_;
 
-    my @donations_all = $c->stash->{financier}->donations_2012s(
-                                                                      undef,
-                                                                      { prefetch => [ { 'politician' => 'candidatures' } ],
-                                                                        order_by => { '-desc' => 'me.receita_valor' } }
-                                                                     );
+    my $cache_id     = 'financier_' . $c->stash->{financier}->id . '_financing2012';
 
-    my @donations_politician = $c->stash->{financier}->donations_2012s(
-                                                                            undef,
-                                                                            {
-                                                                             select => [ 'politician.name', 'politician.token', 'me.cargo', 'me.municipio', 'me.uf', 'me.politician_id', 'me.partido_sigla', { sum => 'me.receita_valor' } ],
-                                                                             as => [ 'name', 'token', 'cargo', 'municipio', 'uf', 'politician_id', 'partido_sigla', 'valor'  ],
-                                                                             group_by => [ 'politician.name', 'politician.token', 'me.cargo', 'me.municipio', 'me.uf', 'me.politician_id', 'me.partido_sigla' ],
-                                                                             join => [ 'politician' ],
-                                                                             order_by => { '-desc' => 'sum' },
-                                                                            }
-                                                                           );
+    my $donations_hashref;
 
-    my $donations_total = $c->stash->{financier}->donations_2012s(
-                                                                        undef,
-                                                                        {
-                                                                         select => [ { sum => 'me.receita_valor' } ],
-                                                                         as => [ 'valor' ],
-                                                                        }
-                                                                       )->first;
+    my $donations_all;
+    my $donations_politician;
+    my $donations_total;
 
-    $c->stash(donations_all        => \@donations_all,
-              donations_politician => \@donations_politician,
-              donations_total      => $donations_total->get_column('valor'),
+    unless ( $donations_hashref = $c->cache->get($cache_id) ) {
+        $c->log->debug('no cache ' . $cache_id);
+
+        $donations_all = [
+          $c->stash->{financier}->donations_2012s(
+            undef,
+            { prefetch => [ { 'politician' => 'candidatures' } ],
+              order_by => { '-desc' => 'me.receita_valor' } } )
+        ];
+
+        $donations_politician = [
+          $c->stash->{financier}->donations_2012s(
+            undef,
+            { select => [ 'politician.name', 'politician.token', 'me.cargo',
+                          'me.municipio', 'me.uf', 'me.politician_id',
+                          'me.partido_sigla', { sum => 'me.receita_valor' } ],
+              as => [ 'name', 'token', 'cargo', 'municipio', 'uf',
+                      'politician_id', 'partido_sigla', 'valor'  ],
+              group_by => [ 'politician.name', 'politician.token', 'me.cargo',
+                            'me.municipio', 'me.uf', 'me.politician_id',
+                            'me.partido_sigla' ],
+              join => [ 'politician' ],
+              order_by => { '-desc' => 'sum' } } )
+        ];
+
+        $donations_total = $c->stash->{financier}->donations_2012s(
+          undef,
+          { select => [ { sum => 'me.receita_valor' } ],
+            as => [ 'valor' ] })->first;
+
+        $donations_hashref = { all => $donations_all,
+                               politician => $donations_politician,
+                               total => $donations_total };
+
+        $c->cache->set($cache_id, $donations_hashref);
+    }
+
+    $c->stash(donations_all        => $donations_hashref->{all},
+              donations_politician => $donations_hashref->{politician},
+              donations_total      => $donations_hashref->{total}->get_column('valor'),
               year                 => 2012,
               template             => 'f/financing.tt');
 }

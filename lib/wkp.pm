@@ -13,6 +13,7 @@ use Catalyst qw/ConfigLoader
                 Session::State::Cookie
                 Captcha
                 ErrorCatcher
+                Cache
                /;
 
 extends 'Catalyst';
@@ -21,6 +22,13 @@ our $VERSION = '0.01';
 
 __PACKAGE__->config(
     name => 'wkp',
+    'Plugin::Cache' => {
+        backend => {
+            class => 'Cache::FastMmap',
+            page_size => '1024k',
+            compress => 1
+        }
+    },
     # Disable deprecated behavior needed by old applications
     disable_component_resolution_regex_fallback => 1,
     enable_catalyst_header => 1, # Send X-Catalyst header
