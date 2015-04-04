@@ -2,198 +2,186 @@
   <h1>Sobre e Termos de Uso</h1>
 </div>
 
-<div class="row">
-  <div class="col-lg-12 col-md-12" style="font-size: 16px; text-align: center">
-    <p>O WikiPolíticos é um ambiente independente e voluntário de
-      compartilhamento de informações sobre política</p>
-  </div>
-</div>
-
 [% INCLUDE 'quick_explanation.tt' %]
 
-<hr>
+<h1>Sobre</h1>
 
-<div class="row">
-  <div class="col-lg-6">
-    <h1>Sobre</h1>
+<p>O WikiPolíticos é um ambiente colaborativo de compartilhamento
+  de informações sobre política.</p>
 
-    <p>O WikiPolíticos é um ambiente colaborativo de compartilhamento
-      de informações sobre política.</p>
+<p>Temos como objetivo promover e organizar o registro de
+  informações sobre contextos relativos à política (uma pessoa,
+  uma obra pública, uma cidade).</p>
 
-    <p>Temos como objetivo promover e organizar o registro de
-      informações sobre contextos relativos à política (uma pessoa,
-      uma obra pública, uma cidade).</p>
+<p>As informações compartilhadas pelos usuários, organizadas,
+  construirão uma fonte da história destes contextos; esta fonte
+  contribuirá com a formação política de cada pessoa;
+  atacará o problema do esquecimento da história política.</p>
 
-    <p>As informações compartilhadas pelos usuários, organizadas,
-      construirão uma fonte da história destes contextos; esta fonte
-      contribuirá com a formação política de cada pessoa;
-      atacará o problema do esquecimento da história política.</p>
+<p>Este projeto dá-se através de trabalho voluntário, o que lhe
+  garante independência.</p>
 
-    <p>Este projeto dá-se através de trabalho voluntário, o que lhe
-      garante independência.</p>
+<h1>O problema a resolver</h1>
 
-    <h1>O problema a resolver</h1>
+<p>O problema abordado é o da demanda por informação sobre um
+  contexto relativo à política.</p>
 
-    <p>O problema abordado é o da demanda por informação sobre um
-      contexto relativo à política.</p>
+<p>Seria preciso uma pesquisa razoável para construirmos um mural
+  com a história de um político ou de uma obra pública controversa,
+  ou para responder perguntas como:</p>
 
-    <p>Seria preciso uma pesquisa razoável para construirmos um mural
-      com a história de um político ou de uma obra pública controversa,
-      ou para responder perguntas como:</p>
+<ul>
+  <li>o que tem feito a prefeitura da cidade na qual moro?</li>
+  <li>como tem votado o vereador no qual votei?</li>
+</ul>
 
-    <ul>
-      <li>o que tem feito a prefeitura da cidade na qual moro?</li>
-      <li>como tem votado o vereador no qual votei?</li>
-    </ul>
+<p>Propomo-nos a disponibilizar espaços para os
+  contextos, onde todos poderão postar informações. Com o
+  acúmulo de informações, estes espaços serão fontes da
+  história de seus contextos.</p>
 
-    <p>Propomo-nos a disponibilizar espaços para os
-      contextos, onde todos poderão postar informações. Com o
-      acúmulo de informações, estes espaços serão fontes da
-      história de seus contextos.</p>
+<h1>O que fazer</h1>
 
-    <h1>O que fazer</h1>
+<p>Principalmente, você pode acessar e compartilhar informações
+  sobre política.</p>
 
-    <p>Principalmente, você pode acessar e compartilhar informações
-      sobre política.</p>
+<h1>Como contribuir</h1>
 
-    <h1>Como contribuir</h1>
+<p>Ao ler algo interessante relativo à política, poste-o aqui num
+  contexto adequado. A construção deles dá-se principalmente
+  através das postagens dos usuários. Ao contribuir, você
+  beneficiará outros leitores.</p>
 
-    <p>Ao ler algo interessante relativo à política, poste-o aqui num
-      contexto adequado. A construção deles dá-se principalmente
-      através das postagens dos usuários. Ao contribuir, você
-      beneficiará outros leitores.</p>
+<p>Não é preciso cadastrar-se para postar, mas é possível. O
+  cadastro torna tecnicamente possível a disponibilização de mais
+  funcionalidades aos usuários. Cadastrando-se você poderá, por
+  exemplo, acompanhar contextos, o que lhe permitirá então acessar
+  uma lista contendo apenas aqueles que acompanha.</p>
 
-    <p>Não é preciso cadastrar-se para postar, mas é possível. O
-      cadastro torna tecnicamente possível a disponibilização de mais
-      funcionalidades aos usuários. Cadastrando-se você poderá, por
-      exemplo, acompanhar contextos, o que lhe permitirá então acessar
-      uma lista contendo apenas aqueles que acompanha.</p>
+<h1>Garantia: as informações serão sempre livres</h1>
 
-    <h1>Garantia: as informações serão sempre livres</h1>
+<p>As informações postadas aqui serão sempre livres
+  e abertas.</p>
 
-    <p>As informações postadas aqui serão sempre livres
-      e abertas.</p>
+<h1>Fonte dos Dados sobre Financiamento Eleitoral</h1>
 
-    <h1>Fonte dos Dados sobre Financiamento Eleitoral</h1>
+<p>A fonte de dados das doações é divulgação das contas das
+  eleições, feita pelo Tribunal Superior Eleitoral (TSE). Pode-se
+  baixar na
+  <a target="_blank"
+     href="http://www.tse.jus.br/eleicoes/repositorio-de-dados-eleitorais">
+    página do TSE</a> os exatos arquivos usados para preencher o
+  banco de dados do WikiPolíticos. Pode-se acessar também
+  <a target="_blank"
+     href="http://divulgacand2012.tse.jus.br/divulgacand2012/ResumoCandidaturas.action">
+    o perfil de qualquer candidato de todo o Brasil</a>.</p>
 
-    <p>A fonte de dados das doações é divulgação das contas das
-      eleições, feita pelo Tribunal Superior Eleitoral (TSE). Pode-se
-      baixar na
-      <a target="_blank"
-         href="http://www.tse.jus.br/eleicoes/repositorio-de-dados-eleitorais">
-        página do TSE</a> os exatos arquivos usados para preencher o
-      banco de dados do WikiPolíticos. Pode-se acessar também
-      <a target="_blank"
-         href="http://divulgacand2012.tse.jus.br/divulgacand2012/ResumoCandidaturas.action">
-        o perfil de qualquer candidato de todo o Brasil</a>.</p>
+<p>A
+  <a target="_blank"
+     href="http://www.tse.jus.br/legislacao/codigo-eleitoral/lei-das-eleicoes/lei-das-eleicoes-lei-nb0-9.504-de-30-de-setembro-de-1997">
+    lei 9.504 de 1997</a> regulamenta que os candidatos devem fazer
+  prestações de contas durante e após as eleições e que o TSE deve
+  fazê-las públicos.</p>
 
-    <p>A
-      <a target="_blank"
-         href="http://www.tse.jus.br/legislacao/codigo-eleitoral/lei-das-eleicoes/lei-das-eleicoes-lei-nb0-9.504-de-30-de-setembro-de-1997">
-        lei 9.504 de 1997</a> regulamenta que os candidatos devem fazer
-      prestações de contas durante e após as eleições e que o TSE deve
-      fazê-las públicos.</p>
+<h1>Páginas Semelhantes</h1>
 
-    <h1>Páginas Semelhantes</h1>
+<p>Provavelmente há muitas páginas semelhantes a esta, e
+  gostaríamos de listá-las aqui para disponibilizar mais e
+  melhores informações. Se você tem mais informações, por favor,
+  nos avise.</p>
 
-    <p>Provavelmente há muitas páginas semelhantes a esta, e
-      gostaríamos de listá-las aqui para disponibilizar mais e
-      melhores informações. Se você tem mais informações, por favor,
-      nos avise.</p>
+<ul>
+  <li>Sobre financiamento eleitoral, a página
+    <a target="_blank" href="http://asclaras.org.br/">Às Claras
+      (asclaras.org.br)</a> é uma ótima fonte.</li>
+  <li>Para Fortaleza-CE, a
+    <a target="_blank"
+       href="http://liberdadefortaleza.wikispaces.com/">Liberdade
+      Fortaleza (liberdadefortaleza.wikispaces.com)</a>
+    disponibiliza gráficos e estatísticas sobre o financiamento
+    eleitoral das eleições 2012. Em parte, usa os mesmos dados que
+    usamos.</li>
+</ul>
 
-    <ul>
-      <li>Sobre financiamento eleitoral, a página
-        <a target="_blank" href="http://asclaras.org.br/">Às Claras
-          (asclaras.org.br)</a> é uma ótima fonte.</li>
-      <li>Para Fortaleza-CE, a
-        <a target="_blank"
-           href="http://liberdadefortaleza.wikispaces.com/">Liberdade
-          Fortaleza (liberdadefortaleza.wikispaces.com)</a>
-        disponibiliza gráficos e estatísticas sobre o financiamento
-        eleitoral das eleições 2012. Em parte, usa os mesmos dados que
-        usamos.</li>
-    </ul>
+<h1>Transparência</h1>
 
-    <h1>Transparência</h1>
+<p>Prezando pela transparência do projeto, atualizaremos no máximo
+  a cada trimestre nossos gastos e publicaremos o código do software
+  que roda o WikiPolíticos.</p>
 
-    <p>Prezando pela transparência do projeto, atualizaremos no máximo
-      a cada trimestre nossos gastos e publicaremos o código do software
-      que roda o WikiPolíticos.</p>
+<h2>Nossos Gastos</h2>
 
-    <h2>Nossos Gastos</h2>
+<p>Desde Outubro de 2012, quando foi ao ar a primeira versão,
+  apenas temos gastos com o desenvolvimento do software, com o
+  servidor onde ele roda e com o domínio.</p>
+<p> O desenvolvimento foi e continua sendo voluntário. Até
+  Fevereiro de 2014, o projeto rodou em um servidor compartilhado
+  gentilmente pela <a href="http://www.astux.com.br">Astux
+    Software</a>. Este servidor era hospedado
+  na <a href="http://www.linode.com">Linode</a>. O domínio também
+  foi pago pelos voluntários.</p>
 
-    <p>Desde Outubro de 2012, quando foi ao ar a primeira versão,
-      apenas temos gastos com o desenvolvimento do software, com o
-      servidor onde ele roda e com o domínio.</p>
-    <p> O desenvolvimento foi e continua sendo voluntário. Até
-      Fevereiro de 2014, o projeto rodou em um servidor compartilhado
-      gentilmente pela <a href="http://www.astux.com.br">Astux
-        Software</a>. Este servidor era hospedado
-      na <a href="http://www.linode.com">Linode</a>. O domínio também
-      foi pago pelos voluntários.</p>
+<p>A partir de Março de 2014 migramos para um servidor hospedado
+  no <a href="http://1984hosting.com">1984 hosting</a>.</p>
 
-    <p>A partir de Março de 2014 migramos para um servidor hospedado
-      no <a href="http://1984hosting.com">1984 hosting</a>.</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Ano - Mês</th>
+      <th>Descrição</th>
+      <th>Valor e Unidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2014 - Março</td>
+      <td>Servidor (hospedagem)</td>
+      <td>~20 dólares</td>
+    </tr>
+    <tr>
+      <td>2014 - Março</td>
+      <td>Serviço de email. Pagamento anual</td>
+      <td>~10 dólares</td>
+    </tr>
+    <tr>
+      <td>2014 - Abril</td>
+      <td>Servidor (hospedagem)</td>
+      <td>25,90 dólares</td>
+    </tr>
+    <tr>
+      <td>2014 - Maio</td>
+      <td>Servidor (hospedagem)</td>
+      <td>~87 reais</td>
+    </tr>
+    <tr>
+      <td>2014 - Junho</td>
+      <td>Servidor (hospedagem)</td>
+      <td>~87 reais</td>
+    </tr>
+    <tr>
+      <td>2014 - Julho</td>
+      <td>Servidor (hospedagem)</td>
+      <td>~87 reais</td>
+    </tr>
+    <tr>
+      <td>2014 - Agosto</td>
+      <td>Servidor (hospedagem)</td>
+      <td>~87 reais</td>
+    </tr>
+  </tbody>
+</table>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Ano - Mês</th>
-          <th>Descrição</th>
-          <th>Valor e Unidade</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2014 - Março</td>
-          <td>Servidor (hospedagem)</td>
-          <td>~20 dólares</td>
-        </tr>
-        <tr>
-          <td>2014 - Março</td>
-          <td>Serviço de email. Pagamento anual</td>
-          <td>~10 dólares</td>
-        </tr>
-        <tr>
-          <td>2014 - Abril</td>
-          <td>Servidor (hospedagem)</td>
-          <td>25,90 dólares</td>
-        </tr>
-        <tr>
-          <td>2014 - Maio</td>
-          <td>Servidor (hospedagem)</td>
-          <td>~87 reais</td>
-        </tr>
-        <tr>
-          <td>2014 - Junho</td>
-          <td>Servidor (hospedagem)</td>
-          <td>~87 reais</td>
-        </tr>
-        <tr>
-          <td>2014 - Julho</td>
-          <td>Servidor (hospedagem)</td>
-          <td>~87 reais</td>
-        </tr>
-        <tr>
-          <td>2014 - Agosto</td>
-          <td>Servidor (hospedagem)</td>
-          <td>~87 reais</td>
-        </tr>
-      </tbody>
-    </table>
+<h2>Software</h2>
 
-    <h2>Software</h2>
+<p>
+  Você pode acessar o código do software (livre) do WikiPolíticos
+  em <a href="https://github.com/wikipoliticos/wkp">
+    https://github.com/wikipoliticos/wkp</a>.
+</p>
 
-    <p>
-      Você pode acessar o código do software (livre) do WikiPolíticos
-      em <a href="https://github.com/wikipoliticos/wkp">
-        https://github.com/wikipoliticos/wkp</a>.
-    </p>
+<h1>Contato</h1>
 
-    <h1>Contato</h1>
-
-    <p>Correio eletrônico: contato@wikipoliticos.com.br</p>
-  </div>
+<p>Correio eletrônico: contato@wikipoliticos.com.br</p>
 
 
 
@@ -201,74 +189,74 @@
 
 
 
-  <div class="col-lg-6">
 
 
 
 
-    <h1>Termos de Uso</h1>
 
-    <p>Você pode acessar, distribuir e copiar qualquer conteúdo
-      publicado pelo WikiPolíticos.</p>
 
-    <h2>Direitos de autores sobre suas postagens</h2>
+<h1>Termos de Uso</h1>
 
-    <p>Ao postar conteúdo de terceiros, como uma notícia de jornal,
-      não há que se falar sobre o direito autoral de quem posta, já
-      que o conteúdo é de terceiros.</p>
+<p>Você pode acessar, distribuir e copiar qualquer conteúdo
+  publicado pelo WikiPolíticos.</p>
 
-    <p>No entanto, ao postar conteúdo próprio, como um comentário de
-      sua autoria sobre uma notícia, você deve concordar que seu
-      comentário/conteúdo poderá ser livremente acessado, distribuído
-      e copiado por terceiros. E quando a postagem não for anônima,
-      quem a distribui e/ou copia deve citar a fonte.</p>
+<h2>Direitos de autores sobre suas postagens</h2>
 
-    <h2>Relevância de postagens</h2>
+<p>Ao postar conteúdo de terceiros, como uma notícia de jornal,
+  não há que se falar sobre o direito autoral de quem posta, já
+  que o conteúdo é de terceiros.</p>
 
-    <p>
-      Trabalhamos para organizar informações de maneira que elas se
-      tornem úteis, tornem-se fonte de formação política. Assim,
-      postagens de pouca relevância ou sem fonte podem ter sua
-      prioridade rebaixada ou ser deletadas. Fundamentamos com um
-      exemplo: uma postagem sobre uma fraude em licitação facilitada
-      por um prefeito é, provavelmente, mais importante que uma
-      postagem sobre a ida de um prefeito a um jogo
-      desportivo. Inclusive, muitas postagens pouco relevantes podem
-      ser usadas para "ofuscar" outras postagens relevantes.
-    </p>
+<p>No entanto, ao postar conteúdo próprio, como um comentário de
+  sua autoria sobre uma notícia, você deve concordar que seu
+  comentário/conteúdo poderá ser livremente acessado, distribuído
+  e copiado por terceiros. E quando a postagem não for anônima,
+  quem a distribui e/ou copia deve citar a fonte.</p>
 
-    <p>Sabemos, no entanto, que pode haver discussão sobre o grau de
-      relevância de determinado conteúdo. Prezando pela transparência,
-      vamos publicar também em separado as mensagens deletadas, por mais
-      irrelevantes que sejam, com justificativa pela deleção, mas
-      atualmente essa funcionalidade não está ainda implementada no
-      software utilizado, que ainda está sendo desenvolvido.</p>
+<h2>Relevância de postagens</h2>
 
-    <h2>Postagens desonestas</h2>
+<p>
+  Trabalhamos para organizar informações de maneira que elas se
+  tornem úteis, tornem-se fonte de formação política. Assim,
+  postagens de pouca relevância ou sem fonte podem ter sua
+  prioridade rebaixada ou ser deletadas. Fundamentamos com um
+  exemplo: uma postagem sobre uma fraude em licitação facilitada
+  por um prefeito é, provavelmente, mais importante que uma
+  postagem sobre a ida de um prefeito a um jogo
+  desportivo. Inclusive, muitas postagens pouco relevantes podem
+  ser usadas para "ofuscar" outras postagens relevantes.
+</p>
 
-    <p>Postagens sem conteúdo relevante, ou de cunho eleitoreiro
-      (principalmente em períodos eleitorais), ou com conteúdo
-      repetido com intuito deixá-lo mais visível ou deixar menos
-      visíveis outras postagens de grande relevância serão
-      consideradas desonestas e podem ser removidas.</p>
+<p>Sabemos, no entanto, que pode haver discussão sobre o grau de
+  relevância de determinado conteúdo. Prezando pela transparência,
+  vamos publicar também em separado as mensagens deletadas, por mais
+  irrelevantes que sejam, com justificativa pela deleção, mas
+  atualmente essa funcionalidade não está ainda implementada no
+  software utilizado, que ainda está sendo desenvolvido.</p>
 
-    <h2>Postadores financiados</h2>
+<h2>Postagens desonestas</h2>
 
-    <p>
-      É sabido que principalmente em período eleitoral políticos e
-      partidos financiam "guerra midiática" na Internet. Este tipo de
-      uso não é permitido no WikiPolíticos. Ao identificar ou
-      suspeitar de tal atividade, faremos públicos os dados que nos
-      fazem acreditar que determinado político ou partido a está
-      fazendo.</p>
+<p>Postagens sem conteúdo relevante, ou de cunho eleitoreiro
+  (principalmente em períodos eleitorais), ou com conteúdo
+  repetido com intuito deixá-lo mais visível ou deixar menos
+  visíveis outras postagens de grande relevância serão
+  consideradas desonestas e podem ser removidas.</p>
 
-    <h2>Postagens deletadas</h2>
+<h2>Postadores financiados</h2>
 
-    <p><i>Repetindo parágrafo já escrito:</i></p>
+<p>
+  É sabido que principalmente em período eleitoral políticos e
+  partidos financiam "guerra midiática" na Internet. Este tipo de
+  uso não é permitido no WikiPolíticos. Ao identificar ou
+  suspeitar de tal atividade, faremos públicos os dados que nos
+  fazem acreditar que determinado político ou partido a está
+  fazendo.</p>
 
-    <p>Prezando pela transparência, vamos publicar também as mensagens
-      deletadas, por mais irrelevantes que sejam, com justificativa pela
-      deleção, mas atualmente essa funcionalidade não está ainda
-      implementada no software utilizado.</p>
-  </div>
-</div>
+<h2>Postagens deletadas</h2>
+
+<p><i>Repetindo parágrafo já escrito:</i></p>
+
+<p>Prezando pela transparência, vamos publicar também as mensagens
+  deletadas, por mais irrelevantes que sejam, com justificativa pela
+  deleção, mas atualmente essa funcionalidade não está ainda
+  implementada no software utilizado.</p>
+

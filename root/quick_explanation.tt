@@ -1,70 +1,53 @@
-<style>
-  #quick-explanation h2 {
-    font-size: 25px;
-  }
-  #quick-explanation {
-    text-align: center;
-  }
-  #quick-explanation p {
-    font-size: 17px;
-    line-height: 20px;
-  }
-</style>
-
-<div id="quick-explanation">
-  <div class="row">
-    <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8">
-      <h2>Objetivo</h2>
-
-      <p>
-        Organizar informações relativas à política. O acúmulo de
-        informações criará um registro da História.
-      </p>
-    </div>
+<div class="row">
+  <div class="lead" style="width: 80%; margin: 20px auto 30px; text-align: center; font-size: 30px">
+    WikiPolíticos é um ambiente independente e voluntário de
+      compartilhamento de informações sobre política
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8">
-      <h2>Método</h2>
+<div class="row">
+  <div class="col-sm-4">
 
-      <p>
-        Colaborativo. Você pode contribuir fazendo postagens de
-        conteúdo e sugerindo melhorias. Não é obrigatório cadastro para postar.
-      </p>
-    </div>
+    <h3>Objetivo</h3>
+    <p>Organizar informações relativas à política. O acúmulo de
+      informações criará um registro da História. </p>
   </div>
-
-  <div class="row">
-    <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8">
-      <h2>Garantias e transparência</h2>
-
-      <p>
-        Projeto voluntário e independente; não tem e nem terá fins de
-        lucro. Você pode acessar os gastos do projeto e o código do
-        software.
-      </p>
-    </div>
+  <div class="col-sm-4">
+    <h3>Método</h3>
+    <p>Colaborativo. Você pode contribuir fazendo postagens de
+      conteúdo e sugerindo melhorias. Não é obrigatório cadastro para postar.</p>
   </div>
+  <div class="col-sm-4">
+    <h3>Garantias e Transparência</h3>
+    <p>Projeto voluntário e independente; não tem e nem terá fins de
+      lucro. Você pode acessar os gastos do projeto e o código do
+      software.</p>
+  </div>
+</div>
 
-  <div class="row">
-    <div class="col-lg-offset-2 col-md-offset-2 col-lg-8 col-md-8">
-      <h2>Como funciona?</h2>
+<div class="row">
+  <div class="col-sm-8">
+    <h3>Como Funciona</h3>
+    <p>
+      As informações estão dentro de contextos.  Um contexto é um
+      mural, onde são publicadas informações. Existe um contexto para
+      cada político (que tenha participado das eleições 2010 e 2012),
+      local (União, Estados e Municípios) e financiador eleitoral.
+    </p>
 
-      <p>
-        As informações estão dentro de contextos.  Um contexto é um
-        mural, onde são publicadas informações. Existe um contexto para
-        cada político (que tenha participado das eleições 2010 e 2012),
-        local (União, Estados e Municípios) e financiador eleitoral.
-      </p>
-
-      <p>
-        No momento estão publicadas apenas postagens de usuários e dados
-        sobre financiamento eleioral. Estamos trabalhando para publicar
-        mais dados, sobre orçamentos públicos, dívidas públicas, votações
-        de parlamentares etc.
-      </p>
-      <p>
-      </p>
-    </div>
+    <p>
+      No momento estão publicadas apenas postagens de usuários e dados
+      sobre financiamento eleioral. Estamos trabalhando para publicar
+      mais dados, sobre orçamentos públicos, dívidas públicas,
+      votações de parlamentares etc.
+    </p>
+  </div>
+  <div class="col-sm-4">
+    <h3>Informações e Dados Abertos</h3>
+    <p>
+      As informações publicadas vêm principalmente das postagens dos
+      usuários e das pesquisas feitas pelo WikiPolíticos em fontes de
+      dados abertos.
+    </p>
   </div>
 </div>
